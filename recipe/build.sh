@@ -4,4 +4,4 @@ set -ex
 export CFLAGS="${CFLAGS} -I${PREFIX}/include"
 export LDFLAGS="${LDFLAGS} -I${PREFIX}/lib"
 
-python setup.py install --single-version-externally-managed --record=record.txt
+{{ PYTHON }} -m pip install . --no-deps -v
