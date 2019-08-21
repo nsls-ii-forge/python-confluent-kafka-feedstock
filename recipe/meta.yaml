@@ -1,0 +1,53 @@
+{% set pkgname = "python-confluent-kafka" %}
+{% set name = "confluent-kafka" %}
+{% set version = "1.1.0" %}
+
+package:
+  name: {{ pkgname|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c8dee478a46a9352224fce1d12756cff6cf50e2684121a118141c7908ae9ed3e
+
+build:
+  number: 0
+  # There is no win build for librdkafka at this time.
+  skip: True  # [win]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - python
+    - setuptools
+    - librdkafka >={{ version }}
+  run:
+    - python
+    - librdkafka >={{ version }}
+
+test:
+  imports:
+    - confluent_kafka
+
+  commands:
+    - conda inspect linkages {{ pkgname }}  # [unix]
+    - conda inspect objects {{ pkgname }}   # [osx]
+
+about:
+  home: https://github.com/confluentinc/confluent-kafka-python
+  license: Apache 2.0
+  license_file: LICENSE.txt
+  summary: "Confluent's Apache Kafka client for Python"
+  description: |
+    Confluent's Kafka client for Python wraps the librdkafka C library,
+    providing full Kafka protocol support with great performance and
+    reliability.
+  doc_url: http://docs.confluent.io/current/clients/confluent-kafka-python/index.html
+
+extra:
+  recipe-maintainers:
+    - rmax
+    - mrocklin
+    - mariusvniekerk
