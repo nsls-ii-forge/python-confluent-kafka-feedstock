@@ -15,7 +15,7 @@ source:
 build:
   number: 0
   # There is no win build for librdkafka at this time.
-  skip: True  # [win]
+  skip: True  # [win or py<36]
 
 requirements:
   build:
