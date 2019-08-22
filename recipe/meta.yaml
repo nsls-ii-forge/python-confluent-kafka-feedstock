@@ -1,7 +1,7 @@
 {% set pkgname = "python-confluent-kafka" %}
 {% set name = "confluent-kafka" %}
-{% set version = "1.1.0" %}
-{% set sha256 = "c8dee478a46a9352224fce1d12756cff6cf50e2684121a118141c7908ae9ed3e" %}
+{% set version = "0.11.5" %}
+{% set sha256hash = "bfb5807bfb5effd74f2cfe65e4e3e8564a9e72b25e099f655d8ad0d362a63b9f" %}
 
 package:
   name: {{ pkgname|lower }}
@@ -10,7 +10,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: {{ sha256hash }}
 
 build:
   number: 0
@@ -22,16 +22,15 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - librdkafka >={{ version }}
+    - librdkafka
     - pip
   run:
     - python
-    - librdkafka >={{ version }}
+    - librdkafka
 
 test:
   imports:
     - confluent_kafka
-
   commands:
     - conda inspect linkages {{ pkgname }}  # [unix]
     - conda inspect objects {{ pkgname }}   # [osx]
@@ -46,9 +45,3 @@ about:
     providing full Kafka protocol support with great performance and
     reliability.
   doc_url: http://docs.confluent.io/current/clients/confluent-kafka-python/index.html
-
-extra:
-  recipe-maintainers:
-    - rmax
-    - mrocklin
-    - mariusvniekerk

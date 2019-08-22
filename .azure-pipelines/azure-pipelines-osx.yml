@@ -13,11 +13,11 @@ jobs:
       osx_python3.6:
         CONFIG: osx_python3.6
         UPLOAD_PACKAGES: True
-        UPLOAD_ON_BRANCH: master
+        UPLOAD_ON_BRANCH: v0.11.5
       osx_python3.7:
         CONFIG: osx_python3.7
         UPLOAD_PACKAGES: True
-        UPLOAD_ON_BRANCH: master
+        UPLOAD_ON_BRANCH: v0.11.5
 
   steps:
   # TODO: Fast finish on azure pipelines?
