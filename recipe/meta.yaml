@@ -8,7 +8,6 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
@@ -31,7 +30,6 @@ requirements:
 test:
   imports:
     - confluent_kafka
-
   commands:
     - conda inspect linkages {{ pkgname }}  # [unix]
     - conda inspect objects {{ pkgname }}   # [osx]
@@ -46,9 +44,3 @@ about:
     providing full Kafka protocol support with great performance and
     reliability.
   doc_url: http://docs.confluent.io/current/clients/confluent-kafka-python/index.html
-
-extra:
-  recipe-maintainers:
-    - rmax
-    - mrocklin
-    - mariusvniekerk
