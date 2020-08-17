@@ -21,8 +21,8 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - librdkafka >={{ version }}
     - pip
+    - librdkafka >={{ version }}
   run:
     - python
     - librdkafka >={{ version }}
