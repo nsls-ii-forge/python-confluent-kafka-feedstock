@@ -5,9 +5,11 @@ Home: https://github.com/confluentinc/confluent-kafka-python
 
 Package license: Apache 2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/nsls-ii-forge/python-confluent-kafka-feedstock/blob/master/LICENSE.txt)
 
 Summary: Confluent's Apache Kafka client for Python
+
+Documentation: http://docs.confluent.io/current/clients/confluent-kafka-python/index.html
 
 Confluent's Kafka client for Python wraps the librdkafka C library,
 providing full Kafka protocol support with great performance and
@@ -32,13 +34,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.6</td>
-              <td>
-                <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=70&branchName=master">
-                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/python-confluent-kafka-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_64_python3.7</td>
               <td>
                 <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=70&branchName=master">
@@ -53,10 +48,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.6</td>
+              <td>linux_64_python3.9</td>
               <td>
                 <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=70&branchName=master">
-                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/python-confluent-kafka-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6" alt="variant">
+                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/python-confluent-kafka-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.9" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -71,6 +66,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=70&branchName=master">
                   <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/python-confluent-kafka-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.9</td>
+              <td>
+                <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=70&branchName=master">
+                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/python-confluent-kafka-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9" alt="variant">
                 </a>
               </td>
             </tr>
@@ -129,9 +131,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
