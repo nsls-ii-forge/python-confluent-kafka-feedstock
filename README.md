@@ -97,6 +97,7 @@ Installing `python-confluent-kafka` from the `nsls2forge` channel can be achieve
 
 ```
 conda config --add channels nsls2forge
+conda config --set channel_priority strict
 ```
 
 Once the `nsls2forge` channel has been enabled, `python-confluent-kafka` can be installed with:
